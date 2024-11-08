@@ -1,27 +1,37 @@
-1. Software Components:
+This model is used for simulating Turing pattern by reaction diffusion model.
 
-Reaction-Diffusion Model:
+Users
 
-Purpose: Simulates the reaction-diffusion process on a 2D grid based on the Turing model equations.
-Input: Reaction parameters (e.g., rate constants), diffusion coefficients, and initial concentration profiles.
-Output: Concentration matrices for each species across the grid at each time step.
-Pattern Visualization (PV):
+1. Biologist - in morphogenesis, development, ecology and pattern formation. By adjusting the parameters of the model, they can simulate different biological patterns to better understand the formation mechanism of zebra stripes, spots, fish scales, bacteria population and other patterns.
+2. Materials chemist - learn patterns formed in different materials or chemical environments to provide guidance for material design and chemical reactions
+3. Computational and system biologist - learn basic parameters in pattern formation and how to form a specific pattern as nature.
+4. Artist - generate nature-inspired design from a Turing pattern
 
-Purpose: Converts the concentration data from the RDM component into visual patterns using matplotlib or similar libraries.
-Input: Concentration matrices from the RDM component.
-Output: Plots of the simulated Turing patterns, saved as images or displayed in the Jupyter Notebook.
-Parameter Sweep Manager (PSM):
 
-Purpose: Manages a sweep over different parameters to generate various patterns, helping users explore the impact of different parameter values.
-Input: Ranges of parameters (e.g., reaction rates, diffusion constants) and step sizes.
-Output: Multiple pattern images with corresponding parameter values.
-2. Interactions to Accomplish Use Cases:
+what information users want from the system 
 
-For Pattern Generation: The user provides parameters to the RDM component, which simulates the system and produces a matrix of concentration values. The PV component then takes this data to display or save the resulting pattern.
-For Parameter Sweep for Pattern Exploration: The user provides parameter ranges to the PSM component, which iterates through these values, calling the RDM component for each set of parameters. The PV component is used to visualize each resulting pattern, allowing users to observe the effect of parameter changes.
-3. Preliminary Plan:
+1. Visual Representation of Patterns: Users want to see the Turing patterns generated from specific reaction-diffusion parameters. They expect the tool to provide clear and accurate visualizations of the spatial patterns based on their inputs.
+2. Parameter Sweep and Pattern Exploration Results: For exploring a range of parameter values, users want to know the patterns for each combination. This makes them to identify parameter sets that lead to particular patterns or behaviors, such as stability, oscillations, or spatial complexity.
 
-1. Create core RDM with functions for initial concentration setup, reaction terms, and diffusion terms.
-2. Add PV functionality for visualizing the results.
-3. Implement PSM to support iterative parameter testing.
-4. Integrate and test interactions between components.
+
+Use cases 
+1. Input Parameters: The user enters parameter
+2. Run Simulation: The user executes the simulation with the entered parameters.
+3. Pattern Visualization: The system displays the final concentration pattern using a color-coded 2D plot, allowing users to observe the generated Turing pattern.
+
+how users interact with the system to get the information they want
+
+1. Starting the Simulation
+Give input parameters, run simulation
+2. Viewing and Analyzing Patterns
+User can see the pattern in notebook output cells
+3. Parameter Sweep and Comparison of Patterns
+Users can define a range of parameter values to explore. Then they can see the patterns correlating with parameters.
+
+4. Saving and Exporting Results
+User can select the export format for pattern images, parameter sweep.
+
+preliminary project plan
+
+Week 1 - write the reaction-diffusion model and write the input part and output part(pattern images)
+Week 2 - write the parameter sweep part
