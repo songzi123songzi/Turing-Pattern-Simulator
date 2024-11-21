@@ -1,6 +1,7 @@
 1. Reaction-Diffusion Model
 This component sets up and simulates the reaction-diffusion equations on a 2D grid. The core of the system is based on the Turing model for generating Turing patterns.
 
+
 Input Data:
 
 Parameters:
@@ -23,3 +24,8 @@ annotation : The parts represented by different components
 This component handles parameter sweeps, going through multiple combinations of reaction rates and diffusion coefficients to generate different patterns.
 Input Data:
 Parameter Ranges: A dictionary with ranges for each parameter to sweep over, such as {'k1': (0.1, 0.5), 'D_A': (0.01, 0.1)}.
+
+preliminary project plan
+
+Week 1 - write the reaction-diffusion model and write the input part and output part(pattern images)
+Week 2 - write the parameter sweep part
