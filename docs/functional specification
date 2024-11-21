@@ -30,8 +30,3 @@ Users can define a range of parameter values to explore. Then they can see the p
 
 4. Saving and Exporting Results
 User can select the export format for pattern images, parameter sweep.
-
-preliminary project plan
-
-Week 1 - write the reaction-diffusion model and write the input part and output part(pattern images)
-Week 2 - write the parameter sweep part
