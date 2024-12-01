@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation, PillowWriter, FFMpegWriter
+from matplotlib.animation import FuncAnimation, PillowWriter
 
 def plot_pattern(concentration, title, color_map='viridis'):
     """
@@ -11,16 +11,15 @@ def plot_pattern(concentration, title, color_map='viridis'):
     plt.axis('off')
     plt.show()
 
-def save_pattern_video(history, filename='pattern.mp4', color_map='viridis', fps=30, video_format='mp4'):
+def save_pattern_gif(history, filename='pattern.gif', color_map='viridis', fps=30):
     """
-    Visualize and save a video or GIF of the evolving Turing pattern.
+    Visualize and save a GIF of the evolving Turing pattern.
     
     Parameters:
         history (list of numpy arrays): Each array represents the concentration grid at a time step.
-        filename (str): Name of the output file (e.g., 'pattern.mp4' or 'pattern.gif').
+        filename (str): Name of the output GIF file (e.g., 'pattern.gif').
         color_map (str): Color map for visualization.
-        fps (int): Frames per second for the video.
-        video_format (str): Either 'mp4' or 'gif'.
+        fps (int): Frames per second for the GIF.
     """
     fig, ax = plt.subplots()
     cax = ax.imshow(history[0], cmap=color_map)
@@ -33,11 +32,7 @@ def save_pattern_video(history, filename='pattern.mp4', color_map='viridis', fps
     # Create animation
     anim = FuncAnimation(fig, update, frames=len(history), blit=True)
 
-    # Save animation
-    if video_format == 'gif':
-        anim.save(filename, writer=PillowWriter(fps=fps))
-    elif video_format == 'mp4':
-        anim.save(filename, writer=FFMpegWriter(fps=fps))
-    else:
-        raise ValueError("Unsupported format. Choose 'mp4' or 'gif'.")
+    # Save animation as GIF
+    anim.save(filename, writer=PillowWriter(fps=fps))
     plt.close(fig)
+
