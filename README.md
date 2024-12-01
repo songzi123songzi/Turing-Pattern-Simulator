@@ -12,3 +12,6 @@ The Turing model appears in chemical reactions, in the formation and development
 # Setup
 ```pip install Turing-pattern-simulator```
 
+# Turing-pattern-simulation
+
+
