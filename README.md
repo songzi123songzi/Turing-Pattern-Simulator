@@ -8,3 +8,7 @@ A Turing pattern is a spatially organized, stable pattern that emerges from the 
 Mathematically, Turing patterns emerge when specific parameter conditions cause the homogeneous steady state of the reaction-diffusion system to become unstable, giving rise to periodic spatial patterns.
 
 The Turing model appears in chemical reactions, in the formation and development of biological forms. Understanding the Turing model is important for understanding biomolecular interactions, biological development, the construction of self-forming systems, and systems biology.
+
+# Setup
+```pip install Turing-pattern-simulator```
+
