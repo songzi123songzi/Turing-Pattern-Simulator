@@ -10,7 +10,7 @@ Mathematically, Turing patterns emerge when specific parameter conditions cause 
 The Turing model appears in chemical reactions, in the formation and development of biological forms. Understanding the Turing model is important for understanding biomolecular interactions, biological development, the construction of self-forming systems, and systems biology.
 
 # Setup
-```pip install Turing-pattern-simulator```
+```pip install Turing_Pattern_Simulator```
 
 # Turing-pattern-simulation
 
