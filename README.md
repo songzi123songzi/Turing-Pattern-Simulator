@@ -61,5 +61,40 @@ simulator(k=0.057,F=0.029,output_type="gif",filename="maze w noise",time_steps= 
 simulator(k=0.054,F=0.014,output_type="gif",filename="moving spots w noise",time_steps= 10000,add_noise=True)
 ```
 
+# Turing-pattern parameter sweep
+In reaction-diffusion models like the Gray-Scott model, the emergent patterns (e.g., spots, stripes, or oscillations) are highly sensitive to the choice of parameters. Small changes in parameters such as feed rate(F), kill rate (k), and diffusion coefficients can lead to different patterns. Performing a parameter sweep allows us to explore the model's behavior across a range of values, and also estimate some underlying function in molecular developmental biology.
 
+How to use
+Here, we can do 1d (one parameter) and 2d (two paramters sweep) and automatically generate a matirx for those parameters.
 
+For 1d sweeper:
+```
+from Turing_Pattern_Simulator import sweeper_1d
+sweeper_1d(
+param_name='F', #parameter you want to sweep
+param_range=(0.01, 0.1, 0.03), #(start point, end point, step size)
+simulator_args={'k': 0.06,'D_u': 0.16,'D_v': 0.08},# other paramters you use for sweep 
+output_dir=output_dir, #the output folder for your sweep figures)
+```
+
+For 2d sweeper:
+```
+from Turing_Pattern_Simulator import sweeper_2d
+sweeper_2d(
+param1_name='F',#parameter1 you want to sweep
+param1_range=(0.02, 0.07, 0.01), #(start point, end point, step size)
+param2_name='k',#parameter2 you want to sweep
+param2_range=(0.02, 0.07, 0.01), #(start point, end point, step size)
+simulator_args={'k': 0.06,'D_u': 0.16,'D_v': 0.08},# other paramters you use for sweep 
+output_dir=output_dir, #the output folder for your sweep figures)
+```
+
+examples
+```
+from Turing_Pattern_Simulator import sweeper_1d
+sweeper_1d(param_name='F', param_range=(0.02, 0.07, 0.01), simulator_args={'k': 0.06,'D_u': 0.16,'D_v': 0.08},output_dir="1d_F_sweep")
+```
+```
+from Turing_Pattern_Simulator import sweeper_2d
+sweeper_2d(param1_name='F', param_range=(0.02, 0.07, 0.01),param2_name='k',param2_range=(0.02, 0.07, 0.01), simulator_args={'D_u': 0.16,'D_v': 0.08},output_dir="2d_F_k_sweep")
+```
