@@ -106,9 +106,6 @@ def simulator(grid_size=100, time_steps=10000, F=0.04, k=0.06, D_u=0.16, D_v=0.0
 
 def sweeper_1d(param_name, param_range, simulator_args, output_dir='sweeper_results', output_type='matrix'):
 
-    import os
-    import numpy as np
-    import matplotlib.pyplot as plt
 
     os.makedirs(output_dir, exist_ok=True)
 
