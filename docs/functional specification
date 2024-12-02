@@ -23,9 +23,29 @@ what information users want from the system
 
 
 Use cases 
-1. Input Parameters: The user enters parameter
-2. Run Simulation: The user executes the simulation with the entered parameters.
-3. Pattern Visualization: The system displays the final concentration pattern using a color-coded 2D plot, allowing users to observe the generated Turing pattern.
+1. Simulating Turing patterns with some of synthetic biology genetic circuits
+Objective: a synthetic biologist wants to build a pattern by some genetic circuits, (such as using quorum sensing system to generate a Turing pattern on bacteria colony on a plate). They have parameters of parts on genetic circuits. So before experiment,
+they want to see in silico, if their circuits can generate Turing patterns using this package.
+
+Steps
+    (1. Input Parameters: The user enters parameter
+    (2. Run Simulation: The user executes the simulation with the entered parameters. For example, use the script as followed
+        from Turing_Pattern_Simulator import simulator
+        simulator(k=0.057,F=0.029,output_type="gif",filename="maze w noise",time_steps= 3000 ,add_noise=True)
+    (3. Pattern Visualization: The system displays the final pattern using a 2D plot, allowing users to observe the generated Turing pattern.
+
+2. Sweeping the parameter on cellular differentiation
+Objective: a development biologist observed a turing pattern on a cell differentiation process in a organ building. After a lot of experiments, They know the removel rate (k) of the differentiated cells (V), 
+but don't know the feed rate (F) of stem cell. They want to get a relatively precise range of the parameter so that they can do experiment to verify the real parameter and learn the underlying function.
+
+Steps
+    (1. Input Parameters: The user enters parameter they know and the parameter they want to sweep, the range, step they want to use.
+    (2. Run Simulation: The user executes the sweep with the entered parameters. For example, use the script as followed
+        from Turing_Pattern_Simulator import sweeper_1d
+        sweeper_1d(param_name='F', param_range=(0.02, 0.07, 0.01), simulator_args={'k': 0.06,'D_u': 0.16,'D_v': 0.08},output_dir="1d_F_sweep")
+    (3. Pattern Visualization: The user can observe the change of pattern with the change of paramter, and determine a good range of parameter, thereby go to experiment.        
+
+
 
 how users interact with the system to get the information they want
 
