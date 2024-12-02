@@ -5,7 +5,7 @@ from Turing_Pattern_Simulator.main import sweeper_1d, sweeper_2d
 class TestSweeper1D(unittest.TestCase):
 
     def test_sweeper_1d(self):
-        """Test if sweeper_1d generates correct number of PNG files when matrix output is disabled."""
+        """Test if sweeper_1d generates correct number of PNG files."""
         output_dir = "test_sweeper_1d_results"
         param_range = (0.01, 0.1, 0.03)
         start, stop, step = param_range
