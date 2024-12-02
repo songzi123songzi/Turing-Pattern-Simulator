@@ -96,5 +96,6 @@ sweeper_1d(param_name='F', param_range=(0.02, 0.07, 0.01), simulator_args={'k': 
 ```
 ```
 from Turing_Pattern_Simulator import sweeper_2d
-sweeper_2d(param1_name='F', param_range=(0.02, 0.07, 0.01),param2_name='k',param2_range=(0.02, 0.07, 0.01), simulator_args={'D_u': 0.16,'D_v': 0.08},output_dir="2d_F_k_sweep")
+sweeper_2d(param1_name='F', param1_range=(0.02, 0.06, 0.01),param2_name='k',param2_range=(0.02, 0.06, 0.01), simulator_args={'D_u': 0.16,'D_v': 0.08,'time_steps': 3000},output_dir="2d_F_k_sweep")
+
 ```
