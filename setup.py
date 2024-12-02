@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Turing_pattern_simulator',
+    name='Turing_Pattern_Simulator',
     version='1',
     description='A Python-based tool for constructing, verifying, and visualizing Turing Pattern based on reaction-diffusion models.',
     author='Zihao Song',
