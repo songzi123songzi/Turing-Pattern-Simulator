@@ -5,7 +5,7 @@ from Turing_Pattern_Simulator.main import sweeper_1d, sweeper_2d
 class TestSweeper2D(unittest.TestCase):
 
     def test_sweeper_2d(self):
-        """Test if sweeper_2d generates correct number of PNG files when matrix output is disabled."""
+        """Test if sweeper_2d generates correct number of PNG files."""
         output_dir = "test_sweeper_2d_results"
         param1_range = (0.01, 0.03, 0.02)
         param2_range = (0.06, 0.08, 0.02)
@@ -13,7 +13,7 @@ class TestSweeper2D(unittest.TestCase):
         # Calculate expected number of files
         param1_values = int((param1_range[1] - param1_range[0]) / param1_range[2]) + 1
         param2_values = int((param2_range[1] - param2_range[0]) / param2_range[2]) + 1
-        expected_file_count = param1_values * param2_values + 1
+        expected_file_count = param1_values * param2_values + 1 
 
         # Run sweeper_2d without matrix output
         sweeper_2d(
